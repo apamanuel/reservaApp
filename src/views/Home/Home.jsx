@@ -1,5 +1,6 @@
 import Accordion from "../../components/Accordion/Accordion";
 import ProgressBar from "../../components/ProgressBar/ProgressBar";
+import { useState } from "react";
 
 const Home = () => {
   const categories = [
@@ -33,6 +34,8 @@ const Home = () => {
     },
   ];
 
+  const [openAccordion, setOpenAccordion] = useState(null);
+
   return (
     <div>
       <div>
@@ -43,7 +46,16 @@ const Home = () => {
       </div>
       <div>
         {categories.map((category) => (
-          <Accordion title={category.category} key={category.id} />
+          <Accordion
+            title={category.category}
+            key={category.id}
+            isOpen={openAccordion === category.id}
+            onToggle={() =>
+              setOpenAccordion(
+                openAccordion === category.id ? null : category.id
+              )
+            }
+          />
         ))}
       </div>
     </div>
