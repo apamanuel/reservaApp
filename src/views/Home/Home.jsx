@@ -1,4 +1,5 @@
 import Accordion from "../../components/Accordion/Accordion";
+import ProgressBar from "../../components/ProgressBar/ProgressBar";
 
 const Home = () => {
   return (
@@ -7,11 +8,10 @@ const Home = () => {
         <h3>Seleccionar servicio</h3>
       </div>
       <div>
-        <h4>Progress bar</h4>
+        <ProgressBar completed={20} />
       </div>
       <div>
-        <Accordion title="Manos y Pies">
-          <p>Esculpido (Solo en 1 una)</p>
+        <Accordion category="Manos y Pies">
           <p>Esculpido (Solo en 1 una)</p>
         </Accordion>
       </div>
