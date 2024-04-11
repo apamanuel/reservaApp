@@ -1,4 +1,4 @@
-export const slots = {
+export const slots = [{
     date: "2024-04-26",
     serviceId: 3,
     availableTimeslots: [
@@ -19,5 +19,27 @@ export const slots = {
     "16:30",
     "17:00"
     ]
-    };
+    },
+    {
+        date: "2024-04-27",
+        serviceId: 3,
+        availableTimeslots: [
+        "09:00",
+        "09:30",
+        "10:00",
+        "10:30",
+        "11:00",
+        "11:30",
+        "12:00",
+        "13:00",
+        "13:30",
+        "14:00",
+        "14:30",
+        "15:00",
+        "15:30",
+        "16:00",
+        "16:30",
+        "17:00"
+        ]
+        }];
     

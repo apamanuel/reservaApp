@@ -1,5 +1,6 @@
-import { GET_SERVICES, GET_CATEGORIES, SELECTED_SERVICE, CONFIRM_SERVICE } from "./actions-types";
+import { GET_SERVICES, GET_CATEGORIES, SELECTED_SERVICE, CONFIRM_SERVICE, GET_SLOTS } from "./actions-types";
 import {services} from "../helpers/services";
+import { slots } from "../helpers/slots";
 
 export const getServices = ()=>{
     return (dispatch)=>{
@@ -36,3 +37,10 @@ export const confirmService = ()=>{
         dispatch({type: CONFIRM_SERVICE, payload: true})
     }
 };
+
+export const getSlots = ()=>{
+    return (dispatch)=>{
+        const newSlots = slots;
+        dispatch({type: GET_SLOTS, payload: newSlots})
+    }
+}
