@@ -1,4 +1,4 @@
-import { GET_SERVICES, GET_CATEGORIES } from "./actions-types";
+import { GET_SERVICES, GET_CATEGORIES, SELECTED_SERVICE } from "./actions-types";
 import {services} from "../helpers/services";
 
 export const getServices = ()=>{
@@ -23,4 +23,10 @@ export const getCategories = ()=>{
         });
         dispatch({type:GET_CATEGORIES, payload: categories})
     };
-}
+};
+
+export const selectedService = (id)=>{
+    return (dispatch)=>{
+        dispatch({type:SELECTED_SERVICE, payload: id})
+    }
+};
