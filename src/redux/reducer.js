@@ -1,9 +1,10 @@
-import { GET_SERVICES, GET_CATEGORIES, SELECTED_SERVICE} from "./actions-types";
+import { GET_SERVICES, GET_CATEGORIES, SELECTED_SERVICE, CONFIRM_SERVICE} from "./actions-types";
 
 const initialState = {
     services:[],
     categories:[],
-    selectedService:''
+    selectedService:'',
+    confirmedService: false
 };
 
 const rootReducer=(state=initialState, action)=>{
@@ -14,6 +15,8 @@ const rootReducer=(state=initialState, action)=>{
             return {...state, categories:action.payload};
         case SELECTED_SERVICE:
             return {...state, selectedService:action.payload};
+        case CONFIRM_SERVICE:
+            return {...state, confirmedService: action.payload};
         default:
             return {...state};
     }

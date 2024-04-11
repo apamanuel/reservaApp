@@ -1,4 +1,4 @@
-import { GET_SERVICES, GET_CATEGORIES, SELECTED_SERVICE } from "./actions-types";
+import { GET_SERVICES, GET_CATEGORIES, SELECTED_SERVICE, CONFIRM_SERVICE } from "./actions-types";
 import {services} from "../helpers/services";
 
 export const getServices = ()=>{
@@ -28,5 +28,11 @@ export const getCategories = ()=>{
 export const selectedService = (id)=>{
     return (dispatch)=>{
         dispatch({type:SELECTED_SERVICE, payload: id})
+    }
+};
+
+export const confirmService = ()=>{
+    return (dispatch)=>{
+        dispatch({type: CONFIRM_SERVICE, payload: true})
     }
 };
