@@ -1,4 +1,4 @@
-import { GET_SERVICES, GET_CATEGORIES, SELECTED_SERVICE, CONFIRM_SERVICE, GET_SLOTS } from "./actions-types";
+import { GET_SERVICES, GET_CATEGORIES, SELECTED_SERVICE, CONFIRM_SERVICE, GET_SLOTS, SELECT_SHIFT } from "./actions-types";
 import {services} from "../helpers/services";
 import { slots } from "../helpers/slots";
 
@@ -43,4 +43,10 @@ export const getSlots = ()=>{
         const newSlots = slots;
         dispatch({type: GET_SLOTS, payload: newSlots})
     }
-}
+};
+
+export const selectShift = (shift)=>{
+    return (dispatch)=>{
+        dispatch({type: SELECT_SHIFT, payload: shift})
+    }
+};
