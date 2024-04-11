@@ -1,38 +1,21 @@
 import Accordion from "../../components/Accordion/Accordion";
 import ProgressBar from "../../components/ProgressBar/ProgressBar";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getCategories, getServices } from "../../redux/actions";
 
 const Home = () => {
-  const categories = [
-    {
-      id: 1,
-      category: "Hands and Feet",
-    },
-    {
-      id: 2,
-      category: "Hair",
-    },
-    {
-      id: 3,
-      category: "Massage and Spa",
-    },
-    {
-      id: 4,
-      category: "Facial Care",
-    },
-    {
-      id: 5,
-      category: "Hair Removal",
-    },
-    {
-      id: 6,
-      category: "Makeup",
-    },
-    {
-      id: 7,
-      category: "Facial Care",
-    },
-  ];
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getCategories());
+  }, [dispatch]);
+
+  useEffect(() => {
+    dispatch(getServices());
+  }, [dispatch]);
+
+  const categories = useSelector((state) => state.categories);
 
   const [openAccordion, setOpenAccordion] = useState(null);
 
