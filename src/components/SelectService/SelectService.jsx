@@ -10,7 +10,7 @@ const SelectService = () => {
   const selectedService = useSelector((state) => state.selectedService);
 
   const HandlerSelect = () => {
-    dispatch(confirmService());
+    dispatch(confirmService(true));
   };
 
   const [openAccordion, setOpenAccordion] = useState(null);
@@ -37,9 +37,7 @@ const SelectService = () => {
         ))}
       </div>
       <div>
-        {selectedService && (
-          <button onClick={() => HandlerSelect()}>Siguiente</button>
-        )}
+        {selectedService && <button onClick={HandlerSelect}>Siguiente</button>}
       </div>
     </div>
   );

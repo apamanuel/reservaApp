@@ -32,9 +32,9 @@ export const selectedService = (id)=>{
     }
 };
 
-export const confirmService = ()=>{
+export const confirmService = (boolean)=>{
     return (dispatch)=>{
-        dispatch({type: CONFIRM_SERVICE, payload: true})
+        dispatch({type: CONFIRM_SERVICE, payload: boolean})
     }
 };
 

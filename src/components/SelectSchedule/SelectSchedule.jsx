@@ -1,7 +1,24 @@
 import AvailableShift from "../AvailableShift/AvailableShift";
 import ProgressBar from "../ProgressBar/ProgressBar";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  selectShift,
+  confirmService,
+  selectedService,
+} from "../../redux/actions";
 
 const SelectSchedule = () => {
+  const dispatch = useDispatch();
+  const selectedShift = useSelector((state) => state.selectedShift);
+
+  const handlerBeforeButton = () => {
+    if (Object.keys(selectedShift).length != 0) {
+      dispatch(selectShift({}));
+    } else {
+      dispatch(confirmService(false));
+      dispatch(selectedService(""));
+    }
+  };
   return (
     <div>
       <div>
@@ -12,6 +29,10 @@ const SelectSchedule = () => {
       </div>
       <div>
         <AvailableShift />
+      </div>
+      <div>
+        <button onClick={handlerBeforeButton}>Anterior</button>
+        <button>Siguiente</button>
       </div>
     </div>
   );
