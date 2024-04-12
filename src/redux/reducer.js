@@ -1,4 +1,4 @@
-import { GET_SERVICES, GET_CATEGORIES, SELECTED_SERVICE, CONFIRM_SERVICE, GET_SLOTS, SELECT_SHIFT} from "./actions-types";
+import { GET_SERVICES, GET_CATEGORIES, SELECTED_SERVICE, CONFIRM_SERVICE, GET_SLOTS, SELECT_SHIFT, CONFIRM_SHIFT} from "./actions-types";
 
 const initialState = {
     services:[],
@@ -6,7 +6,8 @@ const initialState = {
     selectedService:'',
     confirmedService: false,
     slots:[],
-    selectedShift:{}
+    selectedShift:{},
+    confirmedShift: false
 };
 
 const rootReducer=(state=initialState, action)=>{
@@ -23,6 +24,8 @@ const rootReducer=(state=initialState, action)=>{
             return {...state, slots: action.payload};
         case SELECT_SHIFT:
             return {...state, selectedShift: action.payload}
+        case CONFIRM_SHIFT:
+            return {...state, confirmedShift: action.payload}
         default:
             return {...state};
     }

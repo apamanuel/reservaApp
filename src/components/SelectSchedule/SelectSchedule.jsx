@@ -5,11 +5,14 @@ import {
   selectShift,
   confirmService,
   selectedService,
+  confirmShift,
 } from "../../redux/actions";
 
 const SelectSchedule = () => {
   const dispatch = useDispatch();
   const selectedShift = useSelector((state) => state.selectedShift);
+  const confirm = useSelector((state) => state.confirmedShift);
+  console.log(confirm);
 
   const handlerBeforeButton = () => {
     if (Object.keys(selectedShift).length != 0) {
@@ -19,6 +22,13 @@ const SelectSchedule = () => {
       dispatch(selectedService(""));
     }
   };
+
+  const handlerNextButton = () => {
+    if (Object.keys(selectedShift).length != 0) {
+      dispatch(confirmShift(true));
+    }
+  };
+
   return (
     <div>
       <div>
@@ -32,7 +42,7 @@ const SelectSchedule = () => {
       </div>
       <div>
         <button onClick={handlerBeforeButton}>Anterior</button>
-        <button>Siguiente</button>
+        <button onClick={handlerNextButton}>Siguiente</button>
       </div>
     </div>
   );
