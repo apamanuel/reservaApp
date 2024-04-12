@@ -1,7 +1,12 @@
 import { useDispatch, useSelector } from "react-redux";
 import ProgressBar from "../ProgressBar/ProgressBar";
 import style from "./ScheduleService.module.css";
-import { confirmShift } from "../../redux/actions";
+import {
+  confirmShift,
+  selectShift,
+  confirmService,
+  selectedService,
+} from "../../redux/actions";
 import { useNavigate } from "react-router-dom";
 
 const ScheduleService = () => {
@@ -15,6 +20,10 @@ const ScheduleService = () => {
     alert(
       `Se ha creado su cita de "${service.name}" a las ${shift.hour}, ${shift.date}`
     );
+    dispatch(confirmShift(false));
+    dispatch(selectShift({}));
+    dispatch(confirmService(false));
+    dispatch(selectedService({}));
     navigate("/");
   };
 

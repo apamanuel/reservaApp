@@ -1,8 +1,16 @@
+import { useNavigate } from "react-router-dom";
+
 const Landing = () => {
+  const navigate = useNavigate();
   return (
-    <>
-      <h1>Esta es la vista Landing</h1>
-    </>
+    <div>
+      <div>
+        <h1>Bienvenidos</h1>
+      </div>
+      <div>
+        <button onClick={() => navigate("/home")}>AGENDAR CITA</button>
+      </div>
+    </div>
   );
 };
 
