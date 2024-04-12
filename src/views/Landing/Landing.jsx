@@ -1,14 +1,17 @@
 import { useNavigate } from "react-router-dom";
+import style from "./Landing.module.css";
 
 const Landing = () => {
   const navigate = useNavigate();
   return (
-    <div>
-      <div>
-        <h1>Bienvenidos</h1>
+    <div className={style.container}>
+      <div className={style.titleContainer}>
+        <h1 className={style.title}>Bienvenidos</h1>
       </div>
-      <div>
-        <button onClick={() => navigate("/home")}>AGENDAR CITA</button>
+      <div className={style.buttonContainer}>
+        <button className={style.button} onClick={() => navigate("/home")}>
+          Agendar una Cita
+        </button>
       </div>
     </div>
   );
