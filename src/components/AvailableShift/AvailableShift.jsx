@@ -9,7 +9,7 @@ const AvailableShift = () => {
 
   let slotService = [];
   for (let i = 0; i < slots.length; i++) {
-    if (slots[i].serviceId === service) {
+    if (slots[i].serviceId === service.id) {
       slotService.push(slots[i]);
     } else {
       return (

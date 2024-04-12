@@ -11,15 +11,13 @@ import {
 const SelectSchedule = () => {
   const dispatch = useDispatch();
   const selectedShift = useSelector((state) => state.selectedShift);
-  const confirm = useSelector((state) => state.confirmedShift);
-  console.log(confirm);
 
   const handlerBeforeButton = () => {
     if (Object.keys(selectedShift).length != 0) {
       dispatch(selectShift({}));
     } else {
       dispatch(confirmService(false));
-      dispatch(selectedService(""));
+      dispatch(selectedService({}));
     }
   };
 

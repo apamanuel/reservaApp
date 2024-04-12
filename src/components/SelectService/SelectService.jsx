@@ -37,7 +37,9 @@ const SelectService = () => {
         ))}
       </div>
       <div>
-        {selectedService && <button onClick={HandlerSelect}>Siguiente</button>}
+        {Object.keys(selectedService).length != 0 && (
+          <button onClick={HandlerSelect}>Siguiente</button>
+        )}
       </div>
     </div>
   );

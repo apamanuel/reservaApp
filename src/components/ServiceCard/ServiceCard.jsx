@@ -6,8 +6,8 @@ import { selectedService } from "../../redux/actions";
 const ServiceCard = ({ service }) => {
   const dispatch = useDispatch();
 
-  const handlerButton = (id) => {
-    dispatch(selectedService(id));
+  const handlerButton = (service) => {
+    dispatch(selectedService(service));
   };
 
   const serviceSelected = useSelector((state) => state.selectedService);
@@ -17,10 +17,12 @@ const ServiceCard = ({ service }) => {
       <p className={style.name}>{service.name}</p>
       <p className={style.description}>{service.description}</p>
       <div className={style.buttonContainer}>
-        {serviceSelected != service.id ? (
+        {serviceSelected.id != service.id ? (
           <button
             className={style.button}
-            onClick={() => handlerButton(service.id)}
+            onClick={() =>
+              handlerButton({ name: service.name, id: service.id })
+            }
           >
             Seleccionar
           </button>

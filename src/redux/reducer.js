@@ -3,7 +3,7 @@ import { GET_SERVICES, GET_CATEGORIES, SELECTED_SERVICE, CONFIRM_SERVICE, GET_SL
 const initialState = {
     services:[],
     categories:[],
-    selectedService:'',
+    selectedService:{},
     confirmedService: false,
     slots:[],
     selectedShift:{},

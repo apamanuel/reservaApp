@@ -26,9 +26,9 @@ export const getCategories = ()=>{
     };
 };
 
-export const selectedService = (id)=>{
+export const selectedService = (service)=>{
     return (dispatch)=>{
-        dispatch({type:SELECTED_SERVICE, payload: id})
+        dispatch({type:SELECTED_SERVICE, payload: service})
     }
 };
 
