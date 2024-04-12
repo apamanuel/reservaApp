@@ -17,7 +17,7 @@ const SelectService = () => {
   return (
     <div>
       <div>
-        <h3>Seleccionar servicio</h3>
+        <h2>Seleccionar servicio</h2>
       </div>
       <div>
         <ProgressBar completed={20} />

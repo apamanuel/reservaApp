@@ -11,6 +11,12 @@ const AvailableShift = () => {
   for (let i = 0; i < slots.length; i++) {
     if (slots[i].serviceId === service) {
       slotService.push(slots[i]);
+    } else {
+      return (
+        <div className={style.message}>
+          <p>Lo sentimos. En este momento no hay disponibilidad</p>
+        </div>
+      );
     }
   }
 

@@ -17,8 +17,19 @@
 
 }
 
+.message{
+    display:flex;
+    justify-content: center;
+    width: 100%;
+    font-size:x-large;
+    margin-top: 100px;
+}
+
 @media (max-width: 500px) {
     .buttonContainer{
         grid-template-columns: auto auto;
+    }
+    .message{
+        font-size: medium;
     }
 }

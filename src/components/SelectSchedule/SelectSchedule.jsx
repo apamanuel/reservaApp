@@ -5,7 +5,7 @@ const SelectSchedule = () => {
   return (
     <div>
       <div>
-        <h1>Seleccionar horario</h1>
+        <h2>Seleccionar horario</h2>
       </div>
       <div>
         <ProgressBar completed={60} />
