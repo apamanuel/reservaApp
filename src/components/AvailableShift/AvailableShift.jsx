@@ -31,15 +31,18 @@ const AvailableShift = () => {
             <h3>{slot.date}</h3>
             <div className={style.buttonContainer}>
               {slot.availableTimeslots.map((time) => {
+                const shiftKey = `${slot.date}-${time}`;
                 const buttonClass =
-                  time === selectedShift ? style.selectedButton : style.button;
+                  shiftKey === selectedShift
+                    ? style.selectedButton
+                    : style.button;
                 return (
                   <button
                     key={time}
                     className={buttonClass}
                     onClick={() => {
                       dispatch(selectShift({ date: slot.date, hour: time }));
-                      setSelectedShift(time);
+                      setSelectedShift(shiftKey);
                     }}
                   >
                     {time}
