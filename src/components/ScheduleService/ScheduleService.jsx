@@ -1,5 +1,4 @@
 import { useDispatch, useSelector } from "react-redux";
-import ProgressBar from "../ProgressBar/ProgressBar";
 import style from "./ScheduleService.module.css";
 import {
   confirmShift,
@@ -8,6 +7,7 @@ import {
   selectedService,
 } from "../../redux/actions";
 import { useNavigate } from "react-router-dom";
+import Layout from "../../views/Layout";
 
 const ScheduleService = () => {
   const service = useSelector((state) => state.selectedService);
@@ -28,26 +28,24 @@ const ScheduleService = () => {
   };
 
   return (
-    <div className={style.container}>
-      <div>
-        <h2>Confirmar turno</h2>
-      </div>
-      <div>
-        <ProgressBar completed={90} />
-      </div>
-      <div className={style.containerService}>
-        <div>
-          <p>Servicio: {service.name}</p>
+    <Layout title="Confirmar turno" progress={90}>
+      <div className={style.container}>
+        <div className={style.containerService}>
+          <div>
+            <p>Servicio: {service.name}</p>
+          </div>
+          <div>
+            <p>Fecha: {`${shift.date}  ${shift.hour}`}</p>
+          </div>
         </div>
         <div>
-          <p>Fecha: {`${shift.date}  ${shift.hour}`}</p>
+          <button onClick={() => dispatch(confirmShift(false))}>
+            Anterior
+          </button>
+          <button onClick={handlerConfirm}>Confirmar</button>
         </div>
       </div>
-      <div>
-        <button onClick={() => dispatch(confirmShift(false))}>Anterior</button>
-        <button onClick={handlerConfirm}>Confirmar</button>
-      </div>
-    </div>
+    </Layout>
   );
 };
 

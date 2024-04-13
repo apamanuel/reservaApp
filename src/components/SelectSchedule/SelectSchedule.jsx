@@ -1,5 +1,5 @@
 import AvailableShift from "../AvailableShift/AvailableShift";
-import ProgressBar from "../ProgressBar/ProgressBar";
+import Layout from "../../views/Layout";
 import { useDispatch, useSelector } from "react-redux";
 import {
   selectShift,
@@ -28,21 +28,17 @@ const SelectSchedule = () => {
   };
 
   return (
-    <div>
+    <Layout title="Seleccionar horario" progress={60}>
       <div>
-        <h2>Seleccionar horario</h2>
+        <div>
+          <AvailableShift />
+        </div>
+        <div>
+          <button onClick={handlerBeforeButton}>Anterior</button>
+          <button onClick={handlerNextButton}>Siguiente</button>
+        </div>
       </div>
-      <div>
-        <ProgressBar completed={60} />
-      </div>
-      <div>
-        <AvailableShift />
-      </div>
-      <div>
-        <button onClick={handlerBeforeButton}>Anterior</button>
-        <button onClick={handlerNextButton}>Siguiente</button>
-      </div>
-    </div>
+    </Layout>
   );
 };
 
