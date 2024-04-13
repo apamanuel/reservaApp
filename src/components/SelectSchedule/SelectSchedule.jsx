@@ -7,6 +7,7 @@ import {
   selectedService,
   confirmShift,
 } from "../../redux/actions";
+import style from "./SelectSchedule.module.css";
 
 const SelectSchedule = () => {
   const dispatch = useDispatch();
@@ -29,13 +30,17 @@ const SelectSchedule = () => {
 
   return (
     <Layout title="Seleccionar horario" progress={60}>
-      <div>
-        <div>
+      <div className={style.container}>
+        <div className={style.shiftsContainer}>
           <AvailableShift />
         </div>
-        <div>
-          <button onClick={handlerBeforeButton}>Anterior</button>
-          <button onClick={handlerNextButton}>Siguiente</button>
+        <div className={style.buttonsContainer}>
+          <button onClick={handlerBeforeButton} className={style.button}>
+            Anterior
+          </button>
+          <button onClick={handlerNextButton} className={style.button}>
+            Siguiente
+          </button>
         </div>
       </div>
     </Layout>

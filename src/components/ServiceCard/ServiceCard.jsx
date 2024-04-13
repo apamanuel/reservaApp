@@ -19,7 +19,7 @@ const ServiceCard = ({ service }) => {
       <div className={style.buttonContainer}>
         {serviceSelected.id != service.id ? (
           <button
-            className={style.button}
+            className={style.buttonSeleccionar}
             onClick={() =>
               handlerButton({ name: service.name, id: service.id })
             }
@@ -27,7 +27,7 @@ const ServiceCard = ({ service }) => {
             Seleccionar
           </button>
         ) : (
-          <button className={style.button}>Seleccionado</button>
+          <button className={style.buttonSeleccionado}>Seleccionado</button>
         )}
       </div>
     </div>

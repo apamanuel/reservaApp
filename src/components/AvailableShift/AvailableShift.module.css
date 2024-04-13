@@ -23,6 +23,7 @@
     width: 100%;
     font-size:x-large;
     margin-top: 100px;
+    height: 200px;
 }
 
 @media (max-width: 500px) {

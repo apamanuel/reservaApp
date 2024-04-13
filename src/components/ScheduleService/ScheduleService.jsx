@@ -38,11 +38,16 @@ const ScheduleService = () => {
             <p>Fecha: {`${shift.date}  ${shift.hour}`}</p>
           </div>
         </div>
-        <div>
-          <button onClick={() => dispatch(confirmShift(false))}>
+        <div className={style.buttonsContainer}>
+          <button
+            onClick={() => dispatch(confirmShift(false))}
+            className={style.button}
+          >
             Anterior
           </button>
-          <button onClick={handlerConfirm}>Confirmar</button>
+          <button onClick={handlerConfirm} className={style.button}>
+            Confirmar
+          </button>
         </div>
       </div>
     </Layout>

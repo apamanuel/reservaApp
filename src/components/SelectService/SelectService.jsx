@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { confirmService } from "../../redux/actions";
 import Layout from "../../views/Layout";
+import style from "./SelectService.module.css";
 
 const SelectService = () => {
   const dispatch = useDispatch();
@@ -16,8 +17,8 @@ const SelectService = () => {
   const [openAccordion, setOpenAccordion] = useState(null);
   return (
     <Layout title="Seleccionar servicio" progress={20}>
-      <div>
-        <div>
+      <div className={style.container}>
+        <div className={style.accordion_container}>
           {categories.map((category) => (
             <Accordion
               title={category.category}
@@ -31,9 +32,11 @@ const SelectService = () => {
             />
           ))}
         </div>
-        <div>
+        <div className={style.buttonContainer}>
           {Object.keys(selectedService).length != 0 && (
-            <button onClick={HandlerSelect}>Siguiente</button>
+            <button onClick={HandlerSelect} className={style.button}>
+              Siguiente
+            </button>
           )}
         </div>
       </div>
