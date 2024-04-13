@@ -1,4 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
+import { useState } from "react";
 import style from "./AvailableShift.module.css";
 import { selectShift } from "../../redux/actions";
 
@@ -6,6 +7,8 @@ const AvailableShift = () => {
   const slots = useSelector((state) => state.slots);
   const service = useSelector((state) => state.selectedService);
   const dispatch = useDispatch();
+
+  const [selectedShift, setSelectedShift] = useState(null);
 
   let slotService = [];
   for (let i = 0; i < slots.length; i++) {
@@ -28,13 +31,16 @@ const AvailableShift = () => {
             <h3>{slot.date}</h3>
             <div className={style.buttonContainer}>
               {slot.availableTimeslots.map((time) => {
+                const buttonClass =
+                  time === selectedShift ? style.selectedButton : style.button;
                 return (
                   <button
                     key={time}
-                    className={style.button}
-                    onClick={() =>
-                      dispatch(selectShift({ date: slot.date, hour: time }))
-                    }
+                    className={buttonClass}
+                    onClick={() => {
+                      dispatch(selectShift({ date: slot.date, hour: time }));
+                      setSelectedShift(time);
+                    }}
                   >
                     {time}
                   </button>

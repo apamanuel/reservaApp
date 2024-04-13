@@ -17,6 +17,13 @@
 
 }
 
+.selectedButton{
+    padding:10px 25px 10px 25px;
+    justify-content: center;
+    margin: 15px;
+    background-color: #A4B5BF;
+}
+
 .message{
     display:flex;
     justify-content: center;
