@@ -1,0 +1,8 @@
+export const GET_SERVICES = 'GET_SERVICES';
+export const GET_CATEGORIES = 'GET_CATEGORIES';
+export const SELECTED_SERVICE = 'SELECTED_SERVICE';
+export const CONFIRM_SERVICE = 'CONFIRM_SERVICE';
+export const GET_SLOTS = 'GET_SLOTS';
+export const SELECT_SHIFT = 'SELECT_SHIFT';
+export const CONFIRM_SHIFT = 'CONFIRM_SHIFT';
+

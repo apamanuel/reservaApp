@@ -1,0 +1,43 @@
+.container{
+    border: 2.5px solid lightgray;
+    display: grid;
+    grid-template-rows: auto auto;
+    padding: 15px;
+}
+.buttonContainer{
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto;
+}
+
+
+.button{
+    padding:10px 25px 10px 25px;
+    justify-content: center;
+    margin: 15px;
+
+}
+
+.selectedButton{
+    padding:10px 25px 10px 25px;
+    justify-content: center;
+    margin: 15px;
+    background-color: #A4B5BF;
+}
+
+.message{
+    display:flex;
+    justify-content: center;
+    width: 100%;
+    font-size:x-large;
+    margin-top: 100px;
+    height: 200px;
+}
+
+@media (max-width: 500px) {
+    .buttonContainer{
+        grid-template-columns: auto auto;
+    }
+    .message{
+        font-size: medium;
+    }
+}

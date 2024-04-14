@@ -1,0 +1,36 @@
+.container{
+    background-image: linear-gradient(rgba(164, 164, 164, 0.2), rgba(159, 155, 155, 0.2)), url('../../assets/pg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 645px;
+    width: auto;
+}
+.titleContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    color: white
+}
+.title{
+    width:fit-content;
+    height: fit-content;
+    
+}
+.buttonContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 400px;
+}
+.button{
+    padding:10px 40px 10px 40px;
+    border: 1.5px solid black;
+    background-color: #F0F1F2;
+    cursor: pointer;
+    font-size: x-large;
+}
+.button:hover{
+    background-color: #6b7880;
+}

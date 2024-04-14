@@ -1,0 +1,24 @@
+.container{
+  border:1.5px solid #A4B5BF; 
+}
+.titleContainer{
+    background-color: #F0F1F2;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    height: 40px;
+    align-content: center;
+}
+.title{
+    grid-column: 1/2;
+    display: flex;
+    justify-content: baseline;
+    align-items: center;
+    margin-left: 10px;
+}
+.symbol{
+    grid-column: 3/4;
+    font-weight:bolder;
+    display: flex;
+    justify-content: end;
+    margin-right: 10px;
+}
