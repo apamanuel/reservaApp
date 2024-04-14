@@ -6,6 +6,7 @@ import { selectShift } from "../../redux/actions";
 const AvailableShift = () => {
   const slots = useSelector((state) => state.slots);
   const service = useSelector((state) => state.selectedService);
+  const shift = useSelector((state) => state.selectedShift);
   const dispatch = useDispatch();
 
   const [selectedShift, setSelectedShift] = useState(null);
@@ -33,7 +34,7 @@ const AvailableShift = () => {
               {slot.availableTimeslots.map((time) => {
                 const shiftKey = `${slot.date}-${time}`;
                 const buttonClass =
-                  shiftKey === selectedShift
+                  shiftKey === selectedShift && Object.keys(shift).length != 0
                     ? style.selectedButton
                     : style.button;
                 return (

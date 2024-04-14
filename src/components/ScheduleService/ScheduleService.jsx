@@ -26,6 +26,10 @@ const ScheduleService = () => {
     dispatch(selectedService({}));
     navigate("/");
   };
+  const handlerBeforeButton = () => {
+    dispatch(confirmShift(false));
+    dispatch(selectShift({}));
+  };
 
   return (
     <Layout title="Confirmar turno" progress={90}>
@@ -39,10 +43,7 @@ const ScheduleService = () => {
           </div>
         </div>
         <div className={style.buttonsContainer}>
-          <button
-            onClick={() => dispatch(confirmShift(false))}
-            className={style.button}
-          >
+          <button onClick={handlerBeforeButton} className={style.button}>
             Anterior
           </button>
           <button onClick={handlerConfirm} className={style.button}>

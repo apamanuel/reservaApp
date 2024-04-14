@@ -38,7 +38,11 @@ const SelectSchedule = () => {
           <button onClick={handlerBeforeButton} className={style.button}>
             Anterior
           </button>
-          <button onClick={handlerNextButton} className={style.button}>
+          <button
+            onClick={handlerNextButton}
+            className={style.button}
+            disabled={Object.keys(selectedShift).length === 0}
+          >
             Siguiente
           </button>
         </div>
