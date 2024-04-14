@@ -12,4 +12,8 @@ Esta aplicación permite a los usuarios agendar citas para diversos servicios.
 
 4. **Resumen de la cita**: Al hacer clic en "Siguiente", se mostrará un resumen de la cita con el servicio seleccionado, la hora y el día. En la parte inferior habrá dos botones, "Anterior" y "Confirmar". Si se hace clic en el botón "Anterior", el usuario será redirigido para seleccionar nuevamente la hora de la cita, pero no se borrará la selección del servicio. Si se hace clic en el botón "Confirmar", aparecerá una alerta informando al usuario que su servicio ha sido agendado y será redirigido nuevamente a la vista de inicio.
 
+## Despliegue
+
+Puedes acceder a la aplicación en vivo en https://reserva-app-dusky.vercel.app/
+
 Esperamos que disfrutes utilizando nuestra aplicación y que te sea de gran utilidad para agendar tus citas de servicios.
